@@ -1,0 +1,6 @@
+apiVersion: v2
+name: app-of-apps-helm
+description: A Helm chart for deploying an AppProject and multiple Applications in Argo CD
+
+# The version of the chart
+version: 0.1.0

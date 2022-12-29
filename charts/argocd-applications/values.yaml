@@ -1,0 +1,8 @@
+project: ccp-experiment-project-1
+destination:
+  namespace: ccp-experiment-1
+applications:
+  - name: redis
+    repoURL: https://charts.bitnami.com/bitnami
+    chart: redis
+    targetRevision: 17.4.0

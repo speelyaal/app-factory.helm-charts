@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.service.name}}
+  namespace: {{.Values.namespace}}
+spec:
+  replicas: {{.Values.apiReplicas}}
+  selector:
+    matchLabels:
+      name: {{.Values.service.name}}
+  template:
+    metadata:
+      labels:
+        name: {{.Values.service.name}}
+    spec:
+      imagePullSecrets:
+        - name: {{.Values.dockerRepoSecretName }}
+      containers:
+        - name: {{.Values.service.name}}
+          image: {{.Values.service.containerImage}}:{{.Values.service.version}}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{.Values.service.containerPort}}
+

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: applicationset-chart
+description: A Helm chart for deploying an Application Set
+
+# The version of the chart
+version: 0.1.0

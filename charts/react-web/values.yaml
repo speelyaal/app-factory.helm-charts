@@ -1,0 +1,12 @@
+namespace: testchamp-dev
+dockerRepoSecretName: nexus-docker-secret
+service:
+  name: testchamp-web
+  version: 1.0.1
+  port: 1001
+  containerImage: docker.repo.speelyaal.io/testchamp.web
+  containerPort: 80
+ingress:
+  host: testchamp-dev.speelyaal.io
+apiReplicas: 1
+
