@@ -3,4 +3,4 @@ name: argocd-applications
 description: A Helm chart for deploying an AppProject and multiple Applications in Argo CD
 
 # The version of the chart
-version: 0.1.0
+version: 1.0.0

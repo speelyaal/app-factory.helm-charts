@@ -3,4 +3,4 @@ name: argocd-applicationset
 description: A Helm chart for deploying an Application Set
 
 # The version of the chart
-version: 0.1.0
+version: 1.0.0
