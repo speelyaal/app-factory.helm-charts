@@ -2,26 +2,26 @@ apiVersion: v1
 entries:
   argocd-applications:
   - apiVersion: v2
-    created: "2022-12-29T14:35:08.990623+01:00"
+    created: "2022-12-29T14:50:17.02949+01:00"
     description: A Helm chart for deploying an AppProject and multiple Applications
       in Argo CD
-    digest: 9d6e7ef70bc9fb6d08929202ead776c63f6e58e108d007c738e8f23e1ec2a639
+    digest: e7bf08a75cb5689aab9604927ccf66845b2598db36f96de2ab0540908277e137
     name: argocd-applications
     urls:
-    - https://api.bitbucket.org/2.0/repositories/speelyaal/app-factory.helm-charts/src/master/argocd-applications-0.1.0.tgz
-    version: 0.1.0
+    - https://api.bitbucket.org/2.0/repositories/speelyaal/app-factory.helm-charts/src/master/argocd-applications-1.0.0.tgz
+    version: 1.0.0
   argocd-applicationset:
   - apiVersion: v2
-    created: "2022-12-29T14:35:08.992005+01:00"
+    created: "2022-12-29T14:50:17.029915+01:00"
     description: A Helm chart for deploying an Application Set
-    digest: 698b90ac5944621bae6d1c1eb77d19e3735fcffe5258732237bcf1ebefe0a987
+    digest: 2a9a29e36a3bdfade1926c9237d8f9b64138ae6f371e9baa0ad24f5cae33b701
     name: argocd-applicationset
     urls:
-    - https://api.bitbucket.org/2.0/repositories/speelyaal/app-factory.helm-charts/src/master/argocd-applicationset-0.1.0.tgz
-    version: 0.1.0
+    - https://api.bitbucket.org/2.0/repositories/speelyaal/app-factory.helm-charts/src/master/argocd-applicationset-1.0.0.tgz
+    version: 1.0.0
   react-web:
   - apiVersion: v2
-    created: "2022-12-29T14:35:08.992481+01:00"
+    created: "2022-12-29T14:50:17.030448+01:00"
     digest: f5ed52401787af1cf337d06cd84b50ad6a45ac679fab53d7dc071d3b25990986
     name: react-web
     urls:
@@ -29,10 +29,10 @@ entries:
     version: 1.0.0
   spring-boot-service:
   - apiVersion: v2
-    created: "2022-12-29T14:35:08.992951+01:00"
+    created: "2022-12-29T14:50:17.030809+01:00"
     digest: 5a9c549f260d93766e1c479fac4045468fae83a62dea86cc594cf30222cb8a1c
     name: spring-boot-service
     urls:
     - https://api.bitbucket.org/2.0/repositories/speelyaal/app-factory.helm-charts/src/master/spring-boot-service-1.0.0.tgz
     version: 1.0.0
-generated: "2022-12-29T14:35:08.988237+01:00"
+generated: "2022-12-29T14:50:17.026668+01:00"
