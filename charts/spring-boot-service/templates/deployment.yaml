@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.service.name}}
+  namespace: {{.Values.namespace}}
+spec:
+  replicas: {{.Values.apiReplicas}}
+  selector:
+    matchLabels:
+      name: {{.Values.service.name}}
+  template:
+    metadata:
+      labels:
+        name: {{.Values.service.name}}
+    spec:
+      imagePullSecrets:
+        - name: docker-hub-secret
+      containers:
+        - name: {{.Values.service.name}}
+          image: {{.Values.service.containerImage}}:{{.Values.service.version}}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{.Values.service.containerPort}}
+          env:
+            - name: DB_URL
+              value: mongodb://mongodb-0.mongodb-headless.fastusers-data-resources.svc.cluster.local:27017/BBB
+            - name: SECRET_KEY
+              value: 05B3906DDE914C4E719B847FC400234FAB916978A2A01FD6FDCEDE36201ED4A3

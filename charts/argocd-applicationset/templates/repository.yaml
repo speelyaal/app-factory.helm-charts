@@ -1,0 +1,12 @@
+{{/*apiVersion: v1*/}}
+{{/*kind: Secret*/}}
+{{/*metadata:*/}}
+{{/*  name: private-repo-creds*/}}
+{{/*  namespace: argocd*/}}
+{{/*  labels:*/}}
+{{/*    argocd.argoproj.io/secret-type: repo-creds*/}}
+{{/*stringData:*/}}
+{{/*  type: git*/}}
+{{/*  url: https://speelyaal@bitbucket.org/speelyaal/argocd-deployment-tests.git*/}}
+{{/*  password: "ATBB3CpTWrJZbeTF5FRSky2pfzmhB74C3527"*/}}
+{{/*  username: speelyaal*/}}

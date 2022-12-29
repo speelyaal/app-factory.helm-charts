@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ .Values.project }}-applicationset-{{.Values.env}}
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: {{ .Values.env }}
+            url: https://kubernetes.default.svc
+            env: {{ .Values.env }}
+
+      selector:
+        matchLabels:
+          env: {{ .Values.env }}
+  template:
+    metadata:
+      name: '{{.Values.project}}-applicationset-{{.Values.env}}'
+    spec:
+      project: {{ .Values.project }}-{{.Values.env}}
+      source:
+        repoURL: {{ .Values.applicationSet.source.repoURL }}
+        targetRevision: {{ .Values.applicationSet.source.targetRevision }}
+        path: {{ .Values.applicationSet.source.path }}
+        helm:
+          valueFiles: {{ .Values.applicationSet.source.helm.valueFiles }}
+
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: {{.Values.applicationSet.namespace}}-{{.Values.env}}

@@ -1,0 +1,11 @@
+project: argo-experiment-project
+env: DEV
+applicationSet:
+  namespace: argo-experiment
+  source:
+    repoURL: https://speelyaal@bitbucket.org/speelyaal/argocd-deployment-tests.git
+    targetRevision: develop
+    path: app-of-apps-helm
+    helm:
+      valueFiles:
+        - ../helm-values/react-applications.yaml
