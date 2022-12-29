@@ -1,8 +1,6 @@
 project: argo-experiment-project
 env: DEV
-
 applicationSet:
-  name: argo-experiment
   namespace: argo-experiment
   source:
     repoURL: https://speelyaal@bitbucket.org/speelyaal/argocd-deployment-tests.git

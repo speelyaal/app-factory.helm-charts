@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: {{ .Values.applicationSet.name }}
+  name: {{ .Values.project }}-applicationset-{{.Values.env}}
 spec:
   generators:
     - list:
@@ -15,9 +15,9 @@ spec:
           env: {{ .Values.env }}
   template:
     metadata:
-      name: '{{.Values.applicationSet.name}}-applicationset'
+      name: '{{.Values.project}}-applicationset-{{.Values.env}}'
     spec:
-      project: {{ .Values.project }}
+      project: {{ .Values.project }}-{{.Values.env}}
       source:
         repoURL: {{ .Values.applicationSet.source.repoURL }}
         targetRevision: {{ .Values.applicationSet.source.targetRevision }}
@@ -27,4 +27,4 @@ spec:
 
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: {{.Values.applicationSet.namespace}}
+        namespace: {{.Values.applicationSet.namespace}}-{{.Values.env}}

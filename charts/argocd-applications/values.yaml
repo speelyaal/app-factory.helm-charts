@@ -1,4 +1,5 @@
 project: ccp-experiment-project-1
+env: dev
 destination:
   namespace: ccp-experiment-1
 applications:

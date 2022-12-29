@@ -1,6 +1,6 @@
 {{- $namespace := .Values.destination.namespace -}}
 {{- $project := .Values.project -}}
-{{- $applicationSet := .Values.applicationSet -}}
+{{- $env := .Values.env -}}
 {{- range .Values.applications }}
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -11,9 +11,9 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    argocd.argoproj.io/instance: {{ $applicationSet }}
+    argocd.argoproj.io/instance: {{$project}}-applicationset-{{$env}}
 spec:
-  project: {{ $project }}
+  project: {{ $project }}-{{ $env }}
   source:
     repoURL: {{ .repoURL }}
     {{ if .chart }}
@@ -25,7 +25,7 @@ spec:
     {{ end }}
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: {{ $namespace }}
+    namespace: {{ $namespace }}-{{ $env }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
