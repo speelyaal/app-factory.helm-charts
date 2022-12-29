@@ -1,5 +1,5 @@
 apiVersion: v2
-name: applicationset-chart
+name: argocd-applicationset
 description: A Helm chart for deploying an Application Set
 
 # The version of the chart

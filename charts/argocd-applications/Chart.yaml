@@ -1,5 +1,5 @@
 apiVersion: v2
-name: app-of-apps-helm
+name: argocd-applications
 description: A Helm chart for deploying an AppProject and multiple Applications in Argo CD
 
 # The version of the chart
